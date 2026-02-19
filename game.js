@@ -833,11 +833,11 @@ function gameLoop() {
     }
     
     if (gameRunning) {
-        // 处理玩家输入
-        if (keys['w'] || keys['W']) player.move(DIRECTIONS.UP);
-        if (keys['s'] || keys['S']) player.move(DIRECTIONS.DOWN);
-        if (keys['a'] || keys['A']) player.move(DIRECTIONS.LEFT);
-        if (keys['d'] || keys['D']) player.move(DIRECTIONS.RIGHT);
+        // 处理玩家输入（方向键控制）
+        if (keys['ArrowUp']) player.move(DIRECTIONS.UP);
+        if (keys['ArrowDown']) player.move(DIRECTIONS.DOWN);
+        if (keys['ArrowLeft']) player.move(DIRECTIONS.LEFT);
+        if (keys['ArrowRight']) player.move(DIRECTIONS.RIGHT);
         if (keys[' ']) player.shoot();
         
         // 更新游戏对象
