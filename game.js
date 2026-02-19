@@ -701,28 +701,9 @@ function checkBulletCollisions() {
     });
 }
 
-// 坦克间碰撞检测
+// 坦克间碰撞检测（已禁用 - 坦克可以自由穿过彼此）
 function checkTankCollisions() {
-    const playerBounds = player.getBounds();
-    
-    enemies.forEach(enemy => {
-        if (!enemy.active) return;
-        
-        const enemyBounds = enemy.getBounds();
-        if (checkCollision(playerBounds, enemyBounds)) {
-            // 简单的推开处理
-            const dx = (player.x + player.width/2) - (enemy.x + enemy.width/2);
-            const dy = (player.y + player.height/2) - (enemy.y + enemy.height/2);
-            
-            if (Math.abs(dx) > Math.abs(dy)) {
-                if (dx > 0) player.x += 2;
-                else player.x -= 2;
-            } else {
-                if (dy > 0) player.y += 2;
-                else player.y -= 2;
-            }
-        }
-    });
+    // 坦克之间不会互相阻挡，可以自由穿过
 }
 
 // ==================== 格式化时间 ====================
