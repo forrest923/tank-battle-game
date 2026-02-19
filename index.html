@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>坦克大战 - Tank Battle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ff00;
+            font-size: 2.5em;
+        }
+        
+        .game-info {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .info-item {
+            background: rgba(0, 255, 0, 0.1);
+            padding: 8px 20px;
+            border-radius: 5px;
+            border: 2px solid #00ff00;
+        }
+        
+        #gameCanvas {
+            border: 4px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            background: #000;
+        }
+        
+        .controls {
+            margin-top: 15px;
+            text-align: center;
+            color: #888;
+        }
+        
+        .controls p {
+            margin: 5px 0;
+        }
+        
+        .btn {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #00cc00;
+            transform: scale(1.05);
+        }
+        
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            border: 3px solid #ff0000;
+            text-align: center;
+            display: none;
+        }
+        
+        #gameOver h2 {
+            color: #ff0000;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        #gameOver p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔥 坦克大战 🔥</h1>
+    
+    <div class="game-info">
+        <div class="info-item">❤️ 生命: <span id="lives">3</span></div>
+        <div class="info-item">⭐ 分数: <span id="score">0</span></div>
+        <div class="info-item">🎯 敌人: <span id="enemies">0</span></div>
+    </div>
+    
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <div class="controls">
+        <p><strong>操作说明:</strong> WASD 移动 | 空格键 射击</p>
+        <p>消灭所有敌方坦克获得胜利！</p>
+    </div>
+    
+    <div id="gameOver">
+        <h2 id="gameOverTitle">游戏结束</h2>
+        <p id="finalScore">最终分数: 0</p>
+        <button class="btn" onclick="restartGame()">重新开始</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
