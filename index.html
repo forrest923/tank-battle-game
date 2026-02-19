@@ -108,18 +108,21 @@
         <div class="info-item">❤️ 生命: <span id="lives">3</span></div>
         <div class="info-item">⭐ 分数: <span id="score">0</span></div>
         <div class="info-item">🎯 敌人: <span id="enemies">0</span></div>
+        <div class="info-item">⏱️ 时间: <span id="time">0:00</span></div>
     </div>
     
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     
     <div class="controls">
         <p><strong>操作说明:</strong> WASD 移动 | 空格键 射击</p>
-        <p>消灭所有敌方坦克获得胜利！</p>
+        <p>🧱 <strong>砖墙</strong>(棕色)可摧毁 | ⬜ <strong>钢墙</strong>(银色)不可摧毁</p>
+        <p>⚡ 通关越快，时间奖励越高！(60秒内通关奖励500分)</p>
     </div>
     
     <div id="gameOver">
         <h2 id="gameOverTitle">游戏结束</h2>
         <p id="finalScore">最终分数: 0</p>
+        <p id="timeBonus" style="color: #00ff00; font-size: 1.2em; margin-bottom: 15px; display: none;">时间奖励: +0</p>
         <button class="btn" onclick="restartGame()">重新开始</button>
     </div>
 
